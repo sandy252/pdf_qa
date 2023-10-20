@@ -1,6 +1,6 @@
 # PDF QA Bot
 
-PDF QA Bot is a web application built with Streamlit that allows users to upload PDF files and ask questions about the content of the PDF. The application uses the power of Langchain for natural language processing and OpenAI's GPT for answering questions. It also utilizes Pincone for storing and retrieving embeddings for efficient and accurate question-answering.
+PDF QA Bot is a web application built with Streamlit that allows users to upload PDF files and ask questions about the content of the PDF. The application uses the power of Langchain for natural language processing and OpenAI's GPT for answering questions. It also utilizes Pinecone for storing and retrieving embeddings for efficient and accurate question-answering.
 
 ## Features
 
@@ -8,7 +8,7 @@ PDF QA Bot is a web application built with Streamlit that allows users to upload
 - Ask questions about the content of the uploaded PDF.
 - Utilizes Langchain for PDF text extraction.
 - Employs OpenAI's GPT for answering questions.
-- Efficient embeddings storage and retrieval with Pincone.
+- Efficient embeddings storage and retrieval with Pinecone.
 ## Demo and Screenshot
 click [Here](https://drive.google.com/file/d/1JPX9A0UeQyKf267r7RLcYjAY9BzEIP2o/view?usp=sharing) to watch the demo of the web app.
 
