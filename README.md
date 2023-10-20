@@ -10,10 +10,10 @@ PDF QA Bot is a web application built with Streamlit that allows users to upload
 - Employs OpenAI's GPT for answering questions.
 - Efficient embeddings storage and retrieval with Pincone.
 ## Demo and Screenshot
-click ![Here](https://drive.google.com/file/d/1JPX9A0UeQyKf267r7RLcYjAY9BzEIP2o/view?usp=sharing) to watch the demo of the web app.
+click [Here](https://drive.google.com/file/d/1JPX9A0UeQyKf267r7RLcYjAY9BzEIP2o/view?usp=sharing) to watch the demo of the web app.
 
-![Screenshot](https://github.com/sandy252/pdf_qa/assets/66490787/da2867e4-2854-40ba-8213-795696a2477e)
-
+### ScreenShot
+![screenshot-1](https://github.com/sandy252/pdf_qa/assets/66490787/1b81a377-1e8f-40fa-99fb-0e9cb675c254)
 ## Getting Started
 
 ### Prerequisites
