@@ -20,18 +20,18 @@ click [Here](https://drive.google.com/file/d/1JPX9A0UeQyKf267r7RLcYjAY9BzEIP2o/v
 
 Make sure you have the following prerequisites installed:
 
-- Python 3.x
+- Python 3.10
 - Streamlit
 - Langchain
 - OpenAI's GPT model
-- Pincone
+- Pinecone
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/sandy252/pdf_qa.git
    ```
 
 2. Install the required dependencies:
@@ -45,7 +45,7 @@ Make sure you have the following prerequisites installed:
 4. Run the Streamlit app:
 
    ```bash
-   streamlit run app.py
+   streamlit run main.py
    ```
 
 5. Open your web browser and access the app at `http://localhost:8501` or the URL provided by Streamlit.
@@ -64,7 +64,7 @@ Make sure you have the following prerequisites installed:
 
 ## Acknowledgments
 
-- Thanks to Streamlit, Langchain, OpenAI, and Pincone for their fantastic tools and services.
+- Thanks to Streamlit, Langchain, OpenAI, and Pinecone for their fantastic tools and services.
 
 ## Contact
 
