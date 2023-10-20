@@ -7,11 +7,15 @@ from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 import os
 import streamlit as st
-
-
+from dotenv import load_dotenv
+load_dotenv()
 pdf_folder = 'uploaded_pdfs'
 if not os.path.exists(pdf_folder):
     os.makedirs(pdf_folder)
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+PINECONE_ENV = os.getenv("PINECONE_ENV")
+PINECONE_API = os.getenv("PINECONE_API")
 
 st.title("Ask questions to you PDF")
 message = st.empty()
@@ -36,14 +40,16 @@ if uploaded_file is not None:
     message.text("Text Splitter...Started...✅✅✅")
     texts = text_splitter.split_documents(data)
 
-    embeddings = OpenAIEmbeddings(openai_api_key="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")
+    # embeddings = OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY'))
+    embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+
     message.text("Embedding Vector Started Building...✅✅✅")
 
     pinecone.init(
-        api_key="7b1058fd-feaa-40b0-817c-1e3d10e6f1ef",
-        environment="gcp-starter"
+        api_key=PINECONE_API,
+        environment=PINECONE_ENV
     )
-    index_name = "pdfqaa"
+    index_name = "pdfqa"
 
     docsearch = Pinecone.from_texts([t.page_content for t in texts], embeddings, index_name=index_name)
     message.text("Embedding Vector Built successfully...✅✅✅")
@@ -53,6 +59,6 @@ if uploaded_file is not None:
         # query = "tell me about the waste classification and management system."
         docs = docsearch.similarity_search(query)
 
-        llm = OpenAI(temperature=0, openai_api_key="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")
+        llm = OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY)
         chain = load_qa_chain(llm, chain_type="stuff")
         st.write(chain.run(input_documents=docs, question=query))
