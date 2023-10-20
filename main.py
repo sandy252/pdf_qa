@@ -64,6 +64,6 @@ if uploaded_file is not None:
         # query = "tell me about the waste classification and management system."
         docs = docsearch.similarity_search(query)
 
-        llm = OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY)
+        llm = OpenAI(temperature=0.5, openai_api_key=OPENAI_API_KEY)
         chain = load_qa_chain(llm, chain_type="stuff")
         st.write(chain.run(input_documents=docs, question=query))
