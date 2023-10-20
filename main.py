@@ -9,13 +9,18 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
+
 pdf_folder = 'uploaded_pdfs'
 if not os.path.exists(pdf_folder):
     os.makedirs(pdf_folder)
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-PINECONE_ENV = os.getenv("PINECONE_ENV")
-PINECONE_API = os.getenv("PINECONE_API")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# PINECONE_ENV = os.getenv("PINECONE_ENV")
+# PINECONE_API = os.getenv("PINECONE_API")
+
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+PINECONE_ENV = st.secrets["PINECONE_ENV"]
+PINECONE_API = st.secrets["PINECONE_API"]
 
 st.title("Ask questions to you PDF")
 message = st.empty()
